@@ -77,10 +77,10 @@ body {
 .location-dot{
     display:block;
     position: absolute;
-    background-color:#4c0505;
-    width:20px;
-    height:20px;
-    margin: -10px -10px;
+    background-color:rgba(102, 0, 0,.5);
+    width:50px;
+    height:50px;
+    margin: -25px -25px;
     border-radius: 50%;
     color:white;
 

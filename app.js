@@ -1,16 +1,19 @@
 var locationDots =[];
 var dots = [
     {
-        name: 'dot01',
-        blurb: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        name: 'dragyri-1',
+        blurb: 'Beef tenderloin pancetta hamburger porchetta pork, pastrami pork loin chuck pork belly flank prosciutto ball tip. Shank alcatra cow filet mignon doner beef ball tip jowl kielbasa hamburger pork. Brisket beef tri-tip biltong porchetta chicken capicola short ribs bresaola filet mignon drumstick. Short loin capicola shoulder, doner bacon ribeye biltong shankle rump landjaeger. Short ribs tenderloin t-bone pork, pig short loin spare ribs turducken andouille. Turkey jowl strip steak, chuck tongue cupim ribeye pork loin sirloin andouille ham pork spare ribs bacon.'},
+    {
+        name: 'dragyri-2',
+        blurb: 'Chicken tail pork chop jerky beef alcatra. Bresaola landjaeger shank, short loin jowl meatball beef porchetta doner ham hock bacon. Shank porchetta bacon ground round leberkas short ribs chuck ribeye. Jerky pastrami rump, meatloaf jowl boudin short loin pork belly picanha beef ribs bacon. Chicken ground round venison kevin. Meatloaf biltong shoulder, turducken turkey tail drumstick ground round prosciutto short ribs pork loin porchetta filet mignon'
     },
     {
-        name: 'dot02',
-        blurb: 'Lolet, consectetur adipissmod tempor incit labore egna aliqua. Ut enim ad minim venitation ulla nisi ut aliquip ex ea commequat. Duis aute irlor in reprt in voltate vel esse cillore eu fugila pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. te vel esse cillore eu fugila pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est lab.te vel esse cillore eu fugila pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est lab'
+        name: 'dragyri-3',
+        blurb: 'Filet mignon bacon strip steak capicola ball tip chuck pork. Drumstick sirloin beef fatback, picanha porchetta ground round shank shoulder. Beef short loin spare ribs turkey pancetta picanha. Alcatra flank pig ribeye pastrami ham. Jowl t-bone tongue short ribs pork, sausage rump tri-tip shankle jerky turducken salami bacon. Pork loin corned beef cow meatball kevin fatback turducken kielbasa t-bone chicken short loin drumstick brisket jerky tri-tip. Venison boudin beef ribs shoulder, sirloin swine salami chicken meatloaf beef ball tip filet mignon t-bone.'
     },
     {
-        name: 'dangerDot',
-        blurb: 'eEtur adipissmpor incit labogna aliqua. Eiim venilla nisi ut aluip ex eaommuat. Dute irlort in voltel esse cillore eu fugila pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officiunt mollit anim id est laborum. te vel esse cillore eu fugila pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est lab.te vel esse cillore eu fugila pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est lab'
+        name: 'dragyri-4',
+        blurb: 'Drumstick short ribs salami alcatra bresaola, picanha cupim. Beef ribs brisket sirloin prosciutto biltong, ham hock jowl corned beef pork belly meatball shankle short ribs t-bone. Pancetta tail ribeye, pork loin ground round shank capicola alcatra prosciutto chicken tri-tip. Pork belly jowl capicola venison pork loin cow filet mignon ribeye pork chop.'
     },
 ];
 
@@ -44,18 +47,16 @@ function renderInformation(obj){
 }
 
 $(document).ready(function(){
-    $('.location-dot').hover(function(){
-        // console.log(this.getAttribute("name"));
+    $('.location-dot').click(function(){
         var name = this.getAttribute("name");
-
         getNameInfo(name);
     });
 
 
 
     //Makes the map draggable.
-      $( "#draggable" ).draggable();
-    //
-
+    $( "#draggable" ).draggable();
+    //Zoom Navigation code
+    $('.zoom-nav').click(() => {alert("Zoom Features coming soon!");})
 
 });
