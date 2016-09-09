@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+}
+
+/*----------------*/
+/*   Navigation   */
+/*----------------*/
+.zoom-menu{
+    position: absolute;
+    z-index: 100;
+    top: 75px;
+    right:25%
+}
+.zoom-nav{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    background-color: #999;
+    text-align: center;
+    text-size:10px;
+    padding-top:8px;
+    margin:10px 10px;
+}
+.zoom-nav:hover{
+    background-color:#4c0505;
+    color:white;
+}
+
+/*----------------*/
+/* Info Panel CSS */
+/*----------------*/
+.info-panel {
+    display: inline-block;
+    position: absolute;;
+    width: 25%;
+    height: 95.5%;
+    right: 0;
+    background-color: #4c0505;
+    color: white;
+    /*border: 10px solid blue;*/
+    padding: 50px;
+    text-align: center;
+    box-shadow: -5px 0px 5px rgba(0,0,0,.25);
+}
+.info-panel p{}
+#location-title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5em;
+}
+#location-blurb{
+    font-family: 'Poppins',sans-serif;
+    text-align: left;
+    letter-spacing: .1em;
+    font-weight: 300;
+}
+
+
+/*---------*/
+/* Map CSS */
+/*---------*/
+.map-canvas {
+    display: inline-block;
+    position: absolute;
+    background-color: grey;
+    /*border: 10px solid red;*/
+    height: 95.5vh;
+    width: 75%;
+    overflow: scroll;
+    z-index: 0;
+}
+.map-container {}
+.location-dot{
+    display:block;
+    position: absolute;
+    background-color:#4c0505;
+    width:20px;
+    height:20px;
+    margin: -10px -10px;
+    border-radius: 50%;
+    color:white;
+
+}
+.location-dot:hover{
+    background-color: #999;
+}
+#draggable {
+    width: 150px;
+    height: 150px;
+    padding: 0.5em; }
