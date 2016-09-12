@@ -15,7 +15,7 @@ body {
     z-index: 100;
     top: 75px;
     right:25%;
-    transition: right 1.5s
+    transition: right 1.25s
 }
 .menu-collapse{
 

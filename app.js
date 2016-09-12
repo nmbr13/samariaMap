@@ -4,6 +4,7 @@ var zoomOut = document.getElementById('zoom-out');
 var zoomIn = document.getElementById('zoom-in');
 var currentZoom = 1;
 var zoomFactor = .25;
+var isDown = false;
 //The dots array holds all of the objects for the location data on the map.
 var dots = [
     {
@@ -66,6 +67,24 @@ function updateZoom(factor){
     }
     mapContainer.style.transform = 'scale(' + currentZoom + ')';
 }
+//Toggle the Menu
+function toggleMenu(){
+    if(!isDown){
+        console.log('click right');
+        $('.info-panel').css('right','-25%');
+        $('.zoom-menu').css('right','0%');
+        $('.menu-collapse').find('i').removeClass('fa-arrow-right');
+        $('.menu-collapse').find('i').addClass('fa-bars');
+        isDown = true;
+    }else{
+        console.log('go up!');
+        $('.info-panel').css('right','0');
+        $('.zoom-menu').css('right','25%');
+        $('.menu-collapse').find('i').removeClass('fa-bars');
+        $('.menu-collapse').find('i').addClass('fa-arrow-right');
+        isDown = false;
+    }
+};
 
 $(document).ready(function(){
 
@@ -73,6 +92,9 @@ $(document).ready(function(){
     $('.location-dot').click(function(){
         var name = this.getAttribute("name");
         getNameInfo(name);
+        if(isDown){
+            toggleMenu();
+        }
     });
 
 
@@ -89,19 +111,21 @@ $(document).ready(function(){
     });
 
     // Menu Options
-    $('.fa-arrow-right').click(function(){
-        console.log('click right');
-        $('.info-panel').css('right','-25%');
-        $('.zoom-menu').css('right','0%');
-        $('.menu-collapse').find('i').removeClass('fa-arrow-right');
-        $('.menu-collapse').find('i').addClass('fa-arrow-left');
-    });
-    $('.fa-arrow-left').click(function(){
-        console.log('click-left');
-        $('.info-panel').css('right','25%');
-        $('.zoom-menu').css('right','25%');
-        $('.menu-collapse').find('i').removeClass('fa-arrow-left');
-        $('.menu-collapse').find('i').addClass('fa-arrow-right');
-    });
+    document.getElementById('menu-collapse').addEventListener('click',toggleMenu);
+
+    // $('.fa-arrow-right').click(function(){
+    //     console.log('click right');
+    //     $('.info-panel').css('right','-25%');
+    //     $('.zoom-menu').css('right','0%');
+    //     $('.menu-collapse').find('i').removeClass('fa-arrow-right');
+    //     $('.menu-collapse').find('i').addClass('fa-arrow-left');
+    // });
+    // $('.fa-arrow-left').click(function(){
+    //     console.log('click-left');
+    //     $('.info-panel').css('right','25%');
+    //     $('.zoom-menu').css('right','25%');
+    //     $('.menu-collapse').find('i').removeClass('fa-arrow-left');
+    //     $('.menu-collapse').find('i').addClass('fa-arrow-right');
+    // });
 
 });
