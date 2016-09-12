@@ -22,6 +22,7 @@ var dots = [
     },
 ];
 
+//get the name attribute of the location element
 function getNameInfo(n){
     for(var i = 0; i<dots.length; i++){
         var x =  dots[i].name;
@@ -32,6 +33,7 @@ function getNameInfo(n){
         console.log(x);
     }
 }
+//
 function renderInformation(obj){
     //take the object
     //split it into the proper data
@@ -56,7 +58,7 @@ function updateZoom(factor){
     console.log('hello');
     if(currentZoom < .65){
         currentZoom = .65;
-        
+
     }
     if(currentZoom > 1.5){
         currentZoom = 1.5;
@@ -65,15 +67,18 @@ function updateZoom(factor){
 }
 
 $(document).ready(function(){
+
+    //Handle the clicking of the dots on the Map
     $('.location-dot').click(function(){
         var name = this.getAttribute("name");
         getNameInfo(name);
     });
 
 
-
     //Makes the map draggable.
     $('#draggable').draggable();
+
+
     //Zoom Navigation code
     zoomOut.addEventListener("click", function(){
         updateZoom(-zoomFactor);
@@ -81,7 +86,6 @@ $(document).ready(function(){
     zoomIn.addEventListener("click", function(){
         updateZoom(zoomFactor);
     });
-
 
 
 });
