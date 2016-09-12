@@ -31,6 +31,7 @@ body {
     color:white;
 }
 
+
 /*----------------*/
 /* Info Panel CSS */
 /*----------------*/
@@ -66,7 +67,7 @@ body {
 .map-canvas {
     display: inline-block;
     position: absolute;
-    background-color: #666;
+    background-color: #444;
     /*border: 10px solid red;*/
     height: 95.5vh;
     width: 75%;
@@ -74,7 +75,10 @@ body {
     z-index: 0;
 
 }
-.map-container {}
+.map-container {
+    transform-origin: 50% 50%;
+    transition: transform 1s;
+}
 #map-image{
     box-shadow: 0px 0px 15px rgba(0,0,0,.5);
 }
@@ -91,6 +95,9 @@ body {
 }
 .location-dot:hover{
     background-color: #999;
+}
+.location-dot:focus{
+    background-color: #aaa;
 }
 #draggable {
     width: 150px;

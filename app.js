@@ -1,4 +1,9 @@
 var locationDots =[];
+var mapContainer = document.getElementById('draggable');
+var zoomOut = document.getElementById('zoom-out');
+var zoomIn = document.getElementById('zoom-in');
+var currentZoom = 1;
+var zoomFactor = .25;
 var dots = [
     {
         name: 'dragyri-1',
@@ -45,6 +50,19 @@ function renderInformation(obj){
 
     //if the Object is unknown or the key is missing replace with some dummy text
 }
+//zoomfunctions
+function updateZoom(factor){
+    currentZoom += factor;
+    console.log('hello');
+    if(currentZoom < .65){
+        currentZoom = .65;
+        
+    }
+    if(currentZoom > 1.5){
+        currentZoom = 1.5;
+    }
+    mapContainer.style.transform = 'scale(' + currentZoom + ')';
+}
 
 $(document).ready(function(){
     $('.location-dot').click(function(){
@@ -55,8 +73,15 @@ $(document).ready(function(){
 
 
     //Makes the map draggable.
-    $( "#draggable" ).draggable();
+    $('#draggable').draggable();
     //Zoom Navigation code
-    $('.zoom-nav').click(() => {alert("Zoom Features coming soon!");})
+    zoomOut.addEventListener("click", function(){
+        updateZoom(-zoomFactor);
+    });
+    zoomIn.addEventListener("click", function(){
+        updateZoom(zoomFactor);
+    });
+
+
 
 });
