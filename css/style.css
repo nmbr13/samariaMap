@@ -14,12 +14,10 @@ body {
     position: absolute;
     z-index: 100;
     top: 75px;
-    right:25%;
-    transition: right 1.25s
+    right:30%;
+    transition: right 1s
 }
-.menu-collapse{
-
-}
+.menu-collapse{}
 .zoom-nav{
     width:35px;
     height:35px;
@@ -37,14 +35,13 @@ body {
     color:white;
 }
 
-
 /*----------------*/
 /* Info Panel CSS */
 /*----------------*/
 .info-panel {
     display: inline-block;
     position: absolute;;
-    width: 25%;
+    width: 30%;
     height: 95.5%;
     right: 0;
     background-color: #4c0505;
@@ -53,7 +50,7 @@ body {
     padding: 50px;
     text-align: center;
     box-shadow: -5px 0px 5px rgba(0,0,0,.25);
-    transition: right 1s;
+    transition: right .5s top 1s;
 }
 .info-panel p{}
 #location-title{
@@ -66,6 +63,24 @@ body {
     letter-spacing: .1em;
     font-weight: 300;
 }
+#down-arrow{
+    display:none;
+    color:white;
+
+}
+.menu-open{
+    right:0;
+}
+.menu-closed{
+    right:-30%;
+}
+.zoom-open{
+    right:30%;
+}
+.zoom-closed{
+    right:0%;
+}
+
 
 
 /*---------*/
@@ -111,3 +126,37 @@ body {
     width: 150px;
     height: 150px;
     padding: 0.5em; }
+
+/*----------------------------------*/
+/*  Media Rules for Mobile Screens  */
+/*----------------------------------*/
+@media screen and (max-width:800px) {
+    .zoom-menu{
+        display: flex;
+        height: 50px;
+        flex-direction: row;
+        position: absolute;
+        top: 88%;
+        right: 25px;
+    }
+    #down-arrow{
+        display: block;
+        font-size: 30px;
+        margin-top: -5px;
+    }
+    #menu-collapse{
+        display: none;
+    }
+    .info-panel{
+        width:100%;
+        height:auto;
+        padding:10px 25px;
+        top:95%;
+        right:0px;
+        left:0px;
+        margin: 0px auto;
+    }
+    .nav{
+        text-align: center;
+    }
+}

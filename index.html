@@ -22,7 +22,7 @@
             <div class="navbar-header">
                 <a href="#" style="color:#666"><h1 class="navbar-nav navbar-left">Explore Samaria</h1></a>
             </div>
-            <ul class='nav navbar-nav navbar-right'>
+            <ul class='nav navbar-nav navbar-right' data-toggle='collapse'>
                 <li><a href="https://www.facebook.com/darkageminis" target="_blank"><i class='fa fa-twitter'></i> Facebook</a></li>
                 <li><a href=""><i class='fa fa-facebook'></i> Twitter</a></li>
             </ul>
@@ -35,7 +35,7 @@
     <!------------------->
 
     <!-- Contains the zoom controls -->
-    <div class="zoom-menu">
+    <div class="zoom-menu" id='zoom-menu'>
         <div class="zoom-nav menu-collapse" id='menu-collapse'><i class='fa fa-arrow-right'></i></div>
         <div class="zoom-nav" id="zoom-out"><i class='fa fa-minus'></i></div>
         <div class="zoom-nav" id="zoom-in"><i class='fa fa-plus'></i></div>
@@ -59,6 +59,7 @@
     <!-- INFO PANEL -->
     <!---------------->
     <div class="info-panel">
+        <div id='down-arrow' class="fa fa-sort-down"></div>
         <h1 id="location-title">Blackmire Swamp</h1>
         <hr>
         <p id='location-blurb'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta quibusdam quidem voluptates corporis, quia repellendus, aliquid neque asperiores tenetur nulla assumenda cumque, unde omnis odio beatae. Autem minima, harum consequatur! Sit amet,

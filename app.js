@@ -5,6 +5,7 @@ var zoomIn = document.getElementById('zoom-in');
 var currentZoom = 1;
 var zoomFactor = .25;
 var isDown = false;
+var windowWidth = window.innerWidth;
 //The dots array holds all of the objects for the location data on the map.
 var dots = [
     {
@@ -58,8 +59,8 @@ function renderInformation(obj){
 function updateZoom(factor){
     currentZoom += factor;
     console.log('hello');
-    if(currentZoom < .65){
-        currentZoom = .65;
+    if(currentZoom < .45){
+        currentZoom = .45;
 
     }
     if(currentZoom > 1.5){
@@ -68,23 +69,39 @@ function updateZoom(factor){
     mapContainer.style.transform = 'scale(' + currentZoom + ')';
 }
 //Toggle the Menu
-function toggleMenu(){
+function openMenu(){
+    console.log('Open the Menu!');
+    $('.info-panel').removeClass('menu-closed');
+    $('.zoom-menu').removeClass('zoom-closed');
+    $('.info-panel').addClass('menu-open');
+    $('.zoom-menu').addClass('zoom-open');
+    $('.menu-collapse').find('i').removeClass('fa-bars');
+    $('.menu-collapse').find('i').addClass('fa-arrow-right');
+    isDown = false;
+}
+function closeMenu(){
+    console.log('Close the Menu!');
+    $('.info-panel').removeClass('menu-open');
+    $('.zoom-menu').removeClass('zoom-open');
+    $('.info-panel').addClass('menu-closed');
+    $('.zoom-menu').addClass('zoom-closed');
+    $('.menu-collapse').find('i').removeClass('fa-arrow-right');
+    $('.menu-collapse').find('i').addClass('fa-bars');
+    isDown = true;
+}
+function toggleMenuLeft(){
     if(!isDown){
-        console.log('click right');
-        $('.info-panel').css('right','-25%');
-        $('.zoom-menu').css('right','0%');
-        $('.menu-collapse').find('i').removeClass('fa-arrow-right');
-        $('.menu-collapse').find('i').addClass('fa-bars');
-        isDown = true;
+        closeMenu();
     }else{
-        console.log('go up!');
-        $('.info-panel').css('right','0');
-        $('.zoom-menu').css('right','25%');
-        $('.menu-collapse').find('i').removeClass('fa-bars');
-        $('.menu-collapse').find('i').addClass('fa-arrow-right');
-        isDown = false;
+        openMenu();
     }
 };
+//reset the menu on resize
+function resetMenu(){
+    if(window.innerWidth <= 800){
+        openMenu();
+    }
+}
 
 $(document).ready(function(){
 
@@ -93,10 +110,9 @@ $(document).ready(function(){
         var name = this.getAttribute("name");
         getNameInfo(name);
         if(isDown){
-            toggleMenu();
+            toggleMenuLeft();
         }
     });
-
 
     //Makes the map draggable.
     $('#draggable').draggable();
@@ -109,23 +125,8 @@ $(document).ready(function(){
     zoomIn.addEventListener("click", function(){
         updateZoom(zoomFactor);
     });
-
     // Menu Options
-    document.getElementById('menu-collapse').addEventListener('click',toggleMenu);
-
-    // $('.fa-arrow-right').click(function(){
-    //     console.log('click right');
-    //     $('.info-panel').css('right','-25%');
-    //     $('.zoom-menu').css('right','0%');
-    //     $('.menu-collapse').find('i').removeClass('fa-arrow-right');
-    //     $('.menu-collapse').find('i').addClass('fa-arrow-left');
-    // });
-    // $('.fa-arrow-left').click(function(){
-    //     console.log('click-left');
-    //     $('.info-panel').css('right','25%');
-    //     $('.zoom-menu').css('right','25%');
-    //     $('.menu-collapse').find('i').removeClass('fa-arrow-left');
-    //     $('.menu-collapse').find('i').addClass('fa-arrow-right');
-    // });
-
+    document.getElementById('menu-collapse').addEventListener('click',toggleMenuLeft);
+    // catch resize and reset the menu
+    window.addEventListener('resize',resetMenu);
 });
