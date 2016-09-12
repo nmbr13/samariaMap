@@ -14,7 +14,12 @@ body {
     position: absolute;
     z-index: 100;
     top: 75px;
-    right:25%
+    right:25%;
+    transition: right 1.5s
+}
+.menu-collapse{
+    position: relative;
+    top:10px;
 }
 .zoom-nav{
     width:30px;
@@ -22,15 +27,14 @@ body {
     border-radius: 50%;
     background-color: #999;
     text-align: center;
-    text-size:10px;
     padding-top:8px;
     margin:10px 10px;
+    color: #333;
 }
 .zoom-nav:hover{
     background-color:#4c0505;
     color:white;
 }
-
 
 /*----------------*/
 /* Info Panel CSS */
@@ -47,6 +51,7 @@ body {
     padding: 50px;
     text-align: center;
     box-shadow: -5px 0px 5px rgba(0,0,0,.25);
+    transition: right 1s;
 }
 .info-panel p{}
 #location-title{
@@ -70,9 +75,10 @@ body {
     background-color: #444;
     /*border: 10px solid red;*/
     height: 95.5vh;
-    width: 75%;
+    width: 100%;
     overflow: scroll;
     z-index: 0;
+    transition: width 1s;
 
 }
 .map-container {

@@ -4,6 +4,7 @@ var zoomOut = document.getElementById('zoom-out');
 var zoomIn = document.getElementById('zoom-in');
 var currentZoom = 1;
 var zoomFactor = .25;
+//The dots array holds all of the objects for the location data on the map.
 var dots = [
     {
         name: 'dragyri-1',
@@ -33,7 +34,7 @@ function getNameInfo(n){
         console.log(x);
     }
 }
-//
+//render the info to the DOM
 function renderInformation(obj){
     //take the object
     //split it into the proper data
@@ -52,7 +53,7 @@ function renderInformation(obj){
 
     //if the Object is unknown or the key is missing replace with some dummy text
 }
-//zoomfunctions
+//change the Zoom Level
 function updateZoom(factor){
     currentZoom += factor;
     console.log('hello');
@@ -87,5 +88,20 @@ $(document).ready(function(){
         updateZoom(zoomFactor);
     });
 
+    // Menu Options
+    $('.fa-arrow-right').click(function(){
+        console.log('click right');
+        $('.info-panel').css('right','-25%');
+        $('.zoom-menu').css('right','0%');
+        $('.menu-collapse').find('i').removeClass('fa-arrow-right');
+        $('.menu-collapse').find('i').addClass('fa-arrow-left');
+    });
+    $('.fa-arrow-left').click(function(){
+        console.log('click-left');
+        $('.info-panel').css('right','25%');
+        $('.zoom-menu').css('right','25%');
+        $('.menu-collapse').find('i').removeClass('fa-arrow-left');
+        $('.menu-collapse').find('i').addClass('fa-arrow-right');
+    });
 
 });

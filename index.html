@@ -5,9 +5,11 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+    <script src="https://use.fontawesome.com/59eb0099c5.js"></script>
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
@@ -21,7 +23,7 @@
                 <a href="#" style="color:#666"><h1 class="navbar-nav navbar-left">Explore Samaria</h1></a>
             </div>
             <ul class='nav navbar-nav navbar-right'>
-                <li><a href=""><i class='fa fa-twitter'></i> Facebook</a></li>
+                <li><a href="https://www.facebook.com/darkageminis" target="_blank"><i class='fa fa-twitter'></i> Facebook</a></li>
                 <li><a href=""><i class='fa fa-facebook'></i> Twitter</a></li>
             </ul>
         </div>
@@ -34,6 +36,7 @@
 
     <!-- Contains the zoom controls -->
     <div class="zoom-menu">
+        <div class="zoom-nav menu-collapse" id='menu'><i class='fa fa-arrow-right'></i></div>
         <div class="zoom-nav" id="zoom-out"><i class='fa fa-minus'></i></div>
         <div class="zoom-nav" id="zoom-in"><i class='fa fa-plus'></i></div>
     </div>
@@ -43,11 +46,11 @@
         <!-- All of the actual rendered contents for the map -->
         <!-- The draggable id contains all of the elements that should be moved together -->
         <div class="map-container ui-widget-content" id="draggable">
-            <img id='map'src="images/Dark_Age_Map_Layers.jpg" alt=""style="width:2000px;height:auto;">
+            <img id='map' src="images/Dark_Age_Map_Layers.jpg" alt="" style="width:2000px;height:auto;">
             <div class="location-dot" style="top:315px; left:168px;" name='dragyri-1'></div>
             <div class="location-dot" style="top:435px; left:256px;" name='dragyri-2'></div>
-            <div class="location-dot" style="top:561px; left:505px;" name ='dragyri-3'></div>
-            <div class="location-dot" style="top:612px; left:406px;" name ='dragyri-4'></div>
+            <div class="location-dot" style="top:561px; left:505px;" name='dragyri-3'></div>
+            <div class="location-dot" style="top:612px; left:406px;" name='dragyri-4'></div>
         </div>
     </div>
 
@@ -58,7 +61,8 @@
     <div class="info-panel">
         <h1 id="location-title">Blackmire Swamp</h1>
         <hr>
-        <p id='location-blurb'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta quibusdam quidem voluptates corporis, quia repellendus, aliquid neque asperiores tenetur nulla assumenda cumque, unde omnis odio beatae. Autem minima, harum consequatur! Sit amet, concing elit. Atque quae arno de favtoni sono belan que to bella voluptatum repudiandae, fugit a architecto ea aliquid quas animi. Arfus dolorum commorum accusamus asperiores, molestias sapiente quisquam.</p>
+        <p id='location-blurb'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta quibusdam quidem voluptates corporis, quia repellendus, aliquid neque asperiores tenetur nulla assumenda cumque, unde omnis odio beatae. Autem minima, harum consequatur! Sit amet,
+            concing elit. Atque quae arno de favtoni sono belan que to bella voluptatum repudiandae, fugit a architecto ea aliquid quas animi. Arfus dolorum commorum accusamus asperiores, molestias sapiente quisquam.</p>
     </div>
 
     <script src='app.js'></script>
