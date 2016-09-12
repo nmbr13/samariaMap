@@ -21,12 +21,14 @@ body {
 
 }
 .zoom-nav{
-    width:30px;
-    height:30px;
+    width:35px;
+    height:35px;
     border-radius: 50%;
     background-color: #999;
+    font-size: 1.25em;
+    padding-top: 9px;
+    padding-left: 1px;
     text-align: center;
-    padding-top:8px;
     margin:10px 10px;
     color: #333;
 }
