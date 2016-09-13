@@ -75,6 +75,7 @@ nav h1{
     text-align: center;
     box-shadow: -5px 0px 5px rgba(0,0,0,.25);
     transition: right .5s top 1s;
+    overflow:scroll;
 }
 .info-panel p{}
 #location-title{
@@ -104,7 +105,29 @@ nav h1{
 .zoom-closed{
     right:0%;
 }
-
+/* Model Photos */
+.modelContainer{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.modelPhoto{
+    width:100px;
+    padding:3px;
+    margin: 3px auto;
+    height:100px;
+    background: url('http://placehold.it/100x100/333333') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#location-title{}
+#location-faction{
+    width:100px;
+    height:100px;
+    margin: 0px auto;
+    background: url('http://placehold.it/100x100/ffffff');
+}
 
 
 /*---------*/
@@ -129,6 +152,7 @@ nav h1{
 #map-image{
     box-shadow: 0px 0px 15px rgba(0,0,0,.5);
 }
+
 .location-dot{
     display:block;
     position: absolute;
@@ -182,5 +206,8 @@ nav h1{
     }
     .nav{
         text-align: center;
+    }
+    #location-faction{
+        margin-top: 15px;
     }
 }
