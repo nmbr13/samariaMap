@@ -182,8 +182,8 @@ function resetMenu(){
 function classReset(){
     document.getElementById('down-arrow').classList.remove('animated','flash');
 }
-$(document).ready(function(){
 
+$(document).ready(function(){
     //Handle the clicking of the dots on the Map
     $('.location-dot').click(function(){
         var name = this.getAttribute("name");
