@@ -106,7 +106,7 @@ nav h1{
     right:0%;
 }
 /* Model Photos */
-.modelContainer{
+#modelContainer{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -165,7 +165,7 @@ nav h1{
 
 }
 .location-dot:hover{
-    background-color: #999;
+    background-color: rgba(0,0,102,.5);
 }
 .location-dot:focus{
     background-color: #aaa;
