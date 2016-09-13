@@ -177,6 +177,7 @@ function toggleMenuLeft(){
 function resetMenu(){
     if(window.innerWidth <= 800){
         openMenu();
+        mapCenter();
     }
 }
 function classReset(){
@@ -184,6 +185,7 @@ function classReset(){
 }
 
 $(document).ready(function(){
+
     //Handle the clicking of the dots on the Map
     $('.location-dot').click(function(){
         var name = this.getAttribute("name");
