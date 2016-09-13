@@ -102,7 +102,9 @@ function resetMenu(){
         openMenu();
     }
 }
-
+function classReset(){
+    document.getElementById('down-arrow').classList.remove('animated','flash');
+}
 $(document).ready(function(){
 
     //Handle the clicking of the dots on the Map
@@ -112,6 +114,9 @@ $(document).ready(function(){
         if(isDown){
             toggleMenuLeft();
         }
+        document.getElementById('down-arrow').classList.add('animated','flash');
+        window.setTimeout(classReset,500);
+
     });
 
     //Makes the map draggable.
@@ -129,4 +134,7 @@ $(document).ready(function(){
     document.getElementById('menu-collapse').addEventListener('click',toggleMenuLeft);
     // catch resize and reset the menu
     window.addEventListener('resize',resetMenu);
+    document.getElementById('down-arrow').addEventListener('click',function(){
+        this.addClass('animated bounce')
+    });
 });

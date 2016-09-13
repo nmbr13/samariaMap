@@ -35,6 +35,30 @@ body {
     color:white;
 }
 
+/* Bootstrao Reset */
+nav h1{
+    line-height: 37px;
+}
+.nav{
+    padding: 5px 0px;
+    text-align: center;
+}
+.navbar-brand{
+    padding: 10px 15px;
+}
+.nav-pills>li>a{
+    color:#bbb;
+}
+.nav>li>a:hover{
+    background-color: #999;
+    color:#eee;
+
+}
+#social-links{
+    width: 220px;
+    font-size:16px;
+    margin: 0px auto;
+}
 /*----------------*/
 /* Info Panel CSS */
 /*----------------*/
@@ -142,7 +166,7 @@ body {
     #down-arrow{
         display: block;
         font-size: 30px;
-        margin-top: -5px;
+        margin-top: -9px;
     }
     #menu-collapse{
         display: none;
