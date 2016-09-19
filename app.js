@@ -1,4 +1,4 @@
-var locationDots =[];
+var locationDots = [];
 var mapContainer = document.getElementById('draggable');
 var zoomOut = document.getElementById('zoom-out');
 var zoomIn = document.getElementById('zoom-in');
@@ -7,124 +7,137 @@ var zoomFactor = .25;
 var isDown = false;
 var windowWidth = window.innerWidth;
 //The dots array holds all of the objects for the location data on the map.
-var dots = [
-    {
-        name: 'error',
-        title:'Unexplored Areas',
-        blurb: 'Here there be untold dangers that you may never live to see.'
-        },
-    {
-        name: 'dragyri-1',
-        title: 'Air Caste Home',
-        blurb: 'Beef tenderloin pancetta hamburger porchetta pork, pastrami pork loin chuck pork belly flank prosciutto ball tip. Shank alcatra cow filet mignon doner beef ball tip jowl kielbasa hamburger pork. Brisket beef tri-tip biltong porchetta chicken capicola short ribs bresaola filet mignon drumstick. Short loin capicola shoulder, doner bacon ribeye biltong shankle rump landjaeger. Short ribs tenderloin t-bone pork, pig short loin spare ribs turducken andouille. Turkey jowl strip steak, chuck tongue cupim ribeye pork loin sirloin andouille ham pork spare ribs bacon.',
-        modelPhoto0: 'http://placehold.it/100x100/333333',
-        modelPhoto1: 'http://placehold.it/100x100/aeaeae',
-        modelPhoto2: 'http://placehold.it/100x100/444444',
-        },
-    {
-        name: 'dragyri-2',
-        title: 'Fire Caste Dungeon',
-        blurb: 'Chicken tail pork chop jerky beef alcatra. Bresaola landjaeger shank, short loin jowl meatball beef porchetta doner ham hock bacon. Shank porchetta bacon ground round leberkas short ribs chuck ribeye. Jerky pastrami rump, meatloaf jowl boudin short loin pork belly picanha beef ribs bacon. Chicken ground round venison kevin. Meatloaf biltong shoulder, turducken turkey tail drumstick ground round prosciutto short ribs pork loin porchetta filet mignon',
-        modelPhoto0: 'http://placehold.it/100x100/222222',
-        modelPhoto1: 'http://placehold.it/100x100/ffffff',
-        modelPhoto2: 'http://placehold.it/100x100/bbbbbb',
-    },
-    {
-        name: 'dragyri-3',
-        title: 'That other Place',
-        blurb: 'Filet mignon bacon strip steak capicola ball tip chuck pork. Drumstick sirloin beef fatback, picanha porchetta ground round shank shoulder. Beef short loin spare ribs turkey pancetta picanha. Alcatra flank pig ribeye pastrami ham. Jowl t-bone tongue short ribs pork, sausage rump tri-tip shankle jerky turducken salami bacon. Pork loin corned beef cow meatball kevin fatback turducken kielbasa t-bone chicken short loin drumstick brisket jerky tri-tip. Venison boudin beef ribs shoulder, sirloin swine salami chicken meatloaf beef ball tip filet mignon t-bone.',
-        modelPhoto0: 'http://placehold.it/100x100/777777',
-        modelPhoto1: 'http://placehold.it/100x100/111111',
-        modelPhoto2: 'http://placehold.it/100x100/555555',
-    },
-    {
-        name: 'dragyri-4',
-        title: 'The Ancient Ruins of Ben Al Durchenab',
-        blurb: 'Drumstick short ribs salami alcatra bresaola, picanha cupim. Beef ribs brisket sirloin prosciutto biltong, ham hock jowl corned beef pork belly meatball shankle short ribs t-bone. Pancetta tail ribeye, pork loin ground round shank capicola alcatra prosciutto chicken tri-tip. Pork belly jowl capicola venison pork loin cow filet mignon ribeye pork chop.',
-        modelPhoto0: 'http://placehold.it/100x100/888888',
-        modelPhoto1: 'http://placehold.it/100x100/cccccc',
-        modelPhoto2: 'http://placehold.it/100x100/eeeeee',
-    },
-    {
-        name: 'dragyri-5',
-        title: 'Brood Hive',
-        blurb: 'Drumstick short ribs salami alcatra bresaola, picanha cupim. Beef ribs brisket sirloin prosciutto biltong, ham hock jowl corned beef pork belly meatball shankle short ribs t-bone. Pancetta tail ribeye, pork loin ground round shank capicola alcatra prosciutto chicken tri-tip. Pork belly jowl capicola venison pork loin cow filet mignon ribeye pork chop.',
-        modelPhoto0: 'http://placehold.it/100x100/333333',
-        modelPhoto1: 'http://placehold.it/100x100/dddddd',
-        modelPhoto2: 'http://placehold.it/100x100/aaaaaa',
-    },
-    {
-        name: 'dragyri-6',
-        title: 'Recent Deaths',
-        blurb: 'Drumstick short ribs salami alcatra bresaola, picanha cupim. Beef ribs brisket sirloin prosciutto biltong, ham hock jowl corned beef pork belly meatball shankle short ribs t-bone. Pancetta tail ribeye, pork loin ground round shank capicola alcatra prosciutto chicken tri-tip. Pork belly jowl capicola venison pork loin cow filet mignon ribeye pork chop.',
-        modelPhoto0: 'http://placehold.it/100x100/333333',
-        modelPhoto1: 'http://placehold.it/100x100/555555',
-        modelPhoto2: 'http://placehold.it/100x100/111111',
-    },
-    {
-        name: 'dragyri-7',
-        title: 'New Ashkelon',
-        blurb: 'Drumstick short ribs salami alcatra bresaola, picanha cupim. Beef ribs brisket sirloin prosciutto biltong, ham hock jowl corned beef pork belly meatball shankle short ribs t-bone. Pancetta tail ribeye, pork loin ground round shank capicola alcatra prosciutto chicken tri-tip. Pork belly jowl capicola venison pork loin cow filet mignon ribeye pork chop.',
-        modelPhoto0: 'http://placehold.it/100x100/454545',
-        modelPhoto1: 'http://placehold.it/100x100/4e4e4e',
-        modelPhoto2: 'http://placehold.it/100x100/aaaaaa',
-    },
-    {
-        name: 'dragyri-8',
-        title: 'Toxic Waste Dump',
-        blurb: 'vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis',
-        modelPhoto0: 'http://placehold.it/100x100/888888',
-        modelPhoto1: 'http://placehold.it/100x100/ffffff',
-        modelPhoto2: 'http://placehold.it/100x100/454545',
-    },
-    {
-        name: 'newAsh',
-        title: 'New Ashkelon',
-        blurb: 'iatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure',
-        modelPhoto0: 'http://placehold.it/100x100/aaaaaa',
-        modelPhoto1: 'http://placehold.it/100x100/454545',
-        modelPhoto2: 'http://placehold.it/100x100/444444',
-    },{
-        name: 'dragyri-10',
-        title: 'CORE Outpost',
-        blurb: ' Robot ipsum datus scan amet, constructor ad ut splicing elit, sed do errus mod tempor in conduit ut laboratory et deplore electromagna aliqua. Ut enim ad minimum veniam, quis no indestruct exoform ullamco laboris nisi ut alius equip ex ea commando evaluant. Duis ex machina aute ire dolorus in scan detectus an voluptate volt esse cesium dolore eu futile nulla parameter. Execute primus sint occaecat cupidatat non proident, sunt in culpa qui technia deserunt mondus anim id est proceus.',
-        modelPhoto0: 'http://placehold.it/100x100/888888',
-        modelPhoto1: 'http://placehold.it/100x100/aaaaaa',
-        modelPhoto2: 'http://placehold.it/100x100/454545',
-    },
-];
+var dots = [{
+    name: 'error',
+    title: 'Unexplored Areas',
+    blurb: 'Here there be untold dangers that you may never live to see.'
+},{
+    name: 'newAsh',
+    title: 'New Ashkelon',
+    blurb: 'The central hub of human civilization, New Ashkelon is the largest city anywhere on Samaria and home to the Prevailer Council. The highest echelons of leadership within the Forsaken monitor the progress of humanity through their strict theocratic rule, but what they lack in flexibility they make up for in devotion and industriousness. Walled in all sides to keep the threats of the world away, the main gates at the east and west lead to the Lord’s Way road, kept under guard at all times – especially with the recent rise in local alien and robot threat sightings.',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},
+{
+    name: 'cBarrow',
+    title: 'Chains Barrow',
+    blurb: 'The filthy Outcast hive of the slavers, Chains Barrow is a frontier town that lives by the simple rule of “Might makes Right” under the ironfisted tyranny of the Warden and his inner circle. The center of this dingy sprawl is dominated by the Pits, a series of sunken arenas around a single raised coliseum where fights between gladiators, slaves and beasts entertain audiences. For the right amount of bludgeld, anything – or anyone – can be arranged for purchase in Chains Barrow.',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},
+{
+    name: 'isuzaDynamics',
+    title: 'Isuza Dynamics',
+    blurb: 'The Isuza Dynamics compound, all seventeen subterranean stories of it, is the home of the twisted, chaotic, mechanical hive of the C.O.R.E. central AI. Expanding through a web of tunnels and excavated ruins, the robotic threat appears seemingly at random throughout its widened territory. Groups of tireless mechanoid resource gatherers seek, disassemble, and repurpose anything they can get their manipulators on, whether it is the unearthed frame of an old factory, or the essential bio-matter of living things to use as fuel in their entropic cell batteries!',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},
+{
+    name: 'sanguinePlateau',
+    title: 'Sanguine Plateau',
+    blurb: 'It was here that the Dragyri forces of Luck’kit’kaii historically battled against Saint Mark and his followers, creating the longest standing vendetta between the two races. It is held as a sacred reminder of the “cowardice and treachery” of Those-Without-Honor, and is visited often by Dragyri during meditative spirit-journeys when they are seeking answers from the past.',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},{
+    name: 'fringeTown',
+    title: 'Fringe Town and Freeton',
+    blurb: 'While Fringe Town is larger and more populated than its neighbor, both of these trading ports are heavily traveled by scavengers looking to offload their wasteland hauls. Fringe Town is run by a triad of tribal chieftains with profits and survival in mind, but the mining town of Freeton and its primarily Brute populace is unquestioningly governed by the Judge – a charismatic and commanding Brute chieftain that aims to raise his people to never-before-seen heights. Travelers and traders know the area around these towns all too well, and slavers know to always be wary of the Judge’s musclebound marshals!',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},{
+    name: 'ibc',
+    title: 'IBC Central Ruins ',
+    blurb: 'The site of the ancient Invotsroysket Belvonkrastonmyor Clenvisteri bio-chemical engineering facility has long been swallowed up by the Blackmire swamps. These predatory wetlands are home to the Brood Mere and its many generations of genetically manipulated and forcibly-evolved horrors. Recent sightings of strange new mutations in local populations as well as ravening reports from surveyors and scouts hint at something much more sinister taking place behind the steamy curtain of foliage…',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},{
+    name: 'fortRetribution',
+    title: 'Fort Retribution',
+    blurb: 'The feared and infamous Father Johann, once the heretic Saint Johann, made this ancient crashed starship into his base of operations for his sadistic followers. As time has progressed he has turned the hulking refuge of bent metal and chemical storage into the seed of his ultimate goal – to gather all the Skarrd cults and the Baniss tribes under his banner before forging a dark crusade against the Prevailers and their Forsaken pawns.',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},{
+    name: 'dCaverns',
+    title: 'Dragyri Caverns and Spires ',
+    blurb: 'The craggy and broken West Hills are honeycombed with the ancient tunnels, subterranean cavern-villages, and rocky spire aeries of the Dragyri, most notably those of the Ice and Air Castes. It is unfriendly territory for non-Dragyri in the hills, especially anyone who dares enter the crystalline expanse of their homes. With the recent appearance of the Shadow Caste from the depths, new territorial sigils mark certain caverns that even other Dragyri rarely traverse. Despite the glittering treasure of xenosathic crystals found throughout the area, the West Hills go mostly untraveled by mankind.',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},{
+    name: 'k3Expansion',
+    title: 'Kukulkani Expansion',
+    blurb: 'After the Kukulkani starship burned through the atmosphere and landed in the southeast foothills, the life-reaping alien invaders immediately began to set up towering ziggurats and pylons of advanced technology all around. Within just a few weeks of raiding local settlements to feed bio-energy into the mechanisms, the terraforming had begun. The peaty hills have been transformed into a wet, hot, jungle where the Children of Kukulkan plan their conquest and build their Samarian empire. Their teleporting “void roads” allow them to appear anywhere within their growing terraforming project, turning the whole area into a potential ambush around every corner.',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},{
+    name: 'talen',
+    title: 'Talen',
+    blurb: 'The small industry town of Talen sits in a shallow join of the river of the same name, giving the populace access to tiny xenosathic crystal particles flowing down from the West Hills. Combined with thickly rich copper veins in the nearby valleys, and the well-trusted Bladesmiths of Talen are known for their ability to create weaponry from a xenosathic copper alloy that is sturdier than steel and connects with the wielder’s native psychogenic potential, if any. Talen is frequented by many Baniss tribals because of this, and is rumored to be the supplier of Father Johann’s Skarrd armies.',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},{
+    name: 'citadel',
+    title: 'Volcanic Citadel ',
+    blurb: 'The sprawling home of the Fire Caste and the secret hideaway of the last living Alteghrans, the Volcanic Citadel is a network of basalt towers and magma-carved caverns where Rath’Zhi rules his people. Massive storage warehouses and engineering labs are scattered throughout to keep the Fire Caste well-armed with advanced weaponry. After the destruction of one of the Arbiter’s personal arms caches by Saint Luke, platoons of soldiers patrol for miles around to keep the Citadel safe from further trespass. Lava flows, ash, and Fire Caste Dragyri are all you will find in these black mountains.',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},{
+    name: 'trent',
+    title: 'Trent',
+    blurb: 'A popular trading post-turned-frontier city, Trent is sometimes home to the infamous Warlord Hoj and his closest associates during the times of the year when his scavengers are not actively out in the world. Outside of New Ashkelon it is considered to be the greatest center for human civilization even with its seedy taverns, high levels of street violence, and general lawlessness. Ironically, many bounty hunters maintain their offices in Trent instead of New Ashkelon in order to avoid being judged – and taxed – by the Prevailers.',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+},{
+    name: 'crashSite',
+    title: 'Long Haul Crash Site ',
+    blurb: 'Here lays the crashed pirate starship Long Haul, formerly captained by the bounty hunter Jake Flay. Local swamp-folk have revealed the formerly submerged vessel has been pulled from the depths to be half-exposed just south of the Forked Tongue Delta. In another mysterious turn, reports say the ship and the island it rests against are suddenly crawling with Brood creatures, begging the question… what can the Brood Mere possibly want with a starship? ',
+    modelPhoto0: 'http://placehold.it/100x100/333333',
+    modelPhoto1: 'http://placehold.it/100x100/aeaeae',
+    modelPhoto2: 'http://placehold.it/100x100/444444',
+}];
 
 //get the name attribute of the location element
-function getNameInfo(n){
-    for(var i = 1; i<dots.length; i++){
-        var x =  dots[i].name;
-        if (x == n){
+function getNameInfo(n) {
+    for (var i = 1; i < dots.length; i++) {
+        var x = dots[i].name;
+        if (x == n) {
             console.log('success');
             renderInformation(dots[i]);
-        }else if(i>=dots.length){
+        } else if (i >= dots.length) {
             console.log('no match');
             renderInformation(dots[0]);
         }
     }
 }
 //render the info to the DOM
-function renderInformation(obj){
+function renderInformation(obj) {
     //take the object
     //split it into the proper data
     var n = obj.title;
     var b = obj.blurb;
-    var m0 = 'url(' +obj.modelPhoto0 + ')';
-    var m1 = 'url(' +obj.modelPhoto1 + ')';
-    var m2 = 'url(' +obj.modelPhoto2 + ')';
-    console.log(n,b,m0);
+    var m0 = 'url(' + obj.modelPhoto0 + ')';
+    var m1 = 'url(' + obj.modelPhoto1 + ')';
+    var m2 = 'url(' + obj.modelPhoto2 + ')';
+    console.log(n, b, m0);
     //render each piece to the DOM
-    if(n != null){
+    if (n != null) {
         document.getElementById('location-title').innerHTML = n;
         document.getElementById('location-blurb').innerHTML = b;
         document.getElementById('modelContainer').children[0].style.backgroundImage = m0;
         document.getElementById('modelContainer').children[1].style.backgroundImage = m1;
         document.getElementById('modelContainer').children[2].style.backgroundImage = m2;
-    }else {
+    } else {
         console.log('unknown')
         document.getElementById('location-title').innerHTML = "Danger!"
         document.getElementById('location-blurb').innerHTML = "Unknown Location. Send Recon unit soon"
@@ -133,20 +146,20 @@ function renderInformation(obj){
     //if the Object is unknown or the key is missing replace with some dummy text
 }
 //change the Zoom Level
-function updateZoom(factor){
+function updateZoom(factor) {
     currentZoom += factor;
     console.log('hello');
-    if(currentZoom < .45){
+    if (currentZoom < .45) {
         currentZoom = .45;
 
     }
-    if(currentZoom > 1.5){
+    if (currentZoom > 1.5) {
         currentZoom = 1.5;
     }
     mapContainer.style.transform = 'scale(' + currentZoom + ')';
 }
 //Toggle the Menu
-function openMenu(){
+function openMenu() {
     console.log('Open the Menu!');
     $('.info-panel').removeClass('menu-closed');
     $('.zoom-menu').removeClass('zoom-closed');
@@ -156,7 +169,8 @@ function openMenu(){
     $('.menu-collapse').find('i').addClass('fa-arrow-right');
     isDown = false;
 }
-function closeMenu(){
+
+function closeMenu() {
     console.log('Close the Menu!');
     $('.info-panel').removeClass('menu-open');
     $('.zoom-menu').removeClass('zoom-open');
@@ -166,35 +180,37 @@ function closeMenu(){
     $('.menu-collapse').find('i').addClass('fa-bars');
     isDown = true;
 }
-function toggleMenuLeft(){
-    if(!isDown){
+
+function toggleMenuLeft() {
+    if (!isDown) {
         closeMenu();
-    }else{
+    } else {
         openMenu();
     }
 };
 //reset the menu on resize
-function resetMenu(){
-    if(window.innerWidth <= 800){
+function resetMenu() {
+    if (window.innerWidth <= 800) {
         openMenu();
         mapCenter();
     }
 }
-function classReset(){
-    document.getElementById('down-arrow').classList.remove('animated','flash');
+
+function classReset() {
+    document.getElementById('down-arrow').classList.remove('animated', 'flash');
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
 
     //Handle the clicking of the dots on the Map
-    $('.location-dot').click(function(){
+    $('.location-dot').click(function() {
         var name = this.getAttribute("name");
         getNameInfo(name);
-        if(isDown){
+        if (isDown) {
             toggleMenuLeft();
         }
-        document.getElementById('down-arrow').classList.add('animated','flash');
-        window.setTimeout(classReset,500);
+        document.getElementById('down-arrow').classList.add('animated', 'flash');
+        window.setTimeout(classReset, 500);
 
     });
 
@@ -203,17 +219,21 @@ $(document).ready(function(){
 
 
     //Zoom Navigation code
-    zoomOut.addEventListener("click", function(){
+    zoomOut.addEventListener("click", function() {
         updateZoom(-zoomFactor);
     });
-    zoomIn.addEventListener("click", function(){
+    
+    zoomIn.addEventListener("click", function() {
         updateZoom(zoomFactor);
     });
+
     // Menu Options
-    document.getElementById('menu-collapse').addEventListener('click',toggleMenuLeft);
+    document.getElementById('menu-collapse').addEventListener('click', toggleMenuLeft);
+
     // catch resize and reset the menu
-    window.addEventListener('resize',resetMenu);
-    document.getElementById('down-arrow').addEventListener('click',function(){
+    window.addEventListener('resize', resetMenu);
+    document.getElementById('down-arrow').addEventListener('click', function() {
         this.addClass('animated bounce')
     });
+
 });
