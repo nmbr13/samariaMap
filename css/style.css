@@ -88,23 +88,6 @@ nav h1{
     letter-spacing: .1em;
     font-weight: 300;
 }
-#down-arrow{
-    display:none;
-    color:white;
-
-}
-.menu-open{
-    right:0;
-}
-.menu-closed{
-    right:-30%;
-}
-.zoom-open{
-    right:30%;
-}
-.zoom-closed{
-    right:0%;
-}
 /* Model Photos */
 #modelContainer{
     display:flex;
@@ -127,6 +110,25 @@ nav h1{
     height:100px;
     margin: 0px auto;
     background: url('http://placehold.it/100x100/ffffff');
+    background-position: center;
+    background-size: cover;
+}
+#down-arrow{
+    display:none;
+    color:white;
+
+}
+.menu-open{
+    right:0;
+}
+.menu-closed{
+    right:-30%;
+}
+.zoom-open{
+    right:30%;
+}
+.zoom-closed{
+    right:0%;
 }
 
 
