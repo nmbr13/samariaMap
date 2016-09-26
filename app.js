@@ -18,24 +18,21 @@ var dots = [{
     modelPhoto0: 'http://placehold.it/100x100/333333',
     modelPhoto1: 'http://placehold.it/100x100/aeaeae',
     modelPhoto2: 'http://placehold.it/100x100/444444',
-},
-{
+},{
     name: 'cBarrow',
     title: 'Chains Barrow',
     blurb: 'The filthy Outcast hive of the slavers, Chains Barrow is a frontier town that lives by the simple rule of “Might makes Right” under the ironfisted tyranny of the Warden and his inner circle. The center of this dingy sprawl is dominated by the Pits, a series of sunken arenas around a single raised coliseum where fights between gladiators, slaves and beasts entertain audiences. For the right amount of bludgeld, anything – or anyone – can be arranged for purchase in Chains Barrow.',
     modelPhoto0: 'http://placehold.it/100x100/333333',
     modelPhoto1: 'http://placehold.it/100x100/aeaeae',
     modelPhoto2: 'http://placehold.it/100x100/444444',
-},
-{
+},{
     name: 'isuzaDynamics',
     title: 'Isuza Dynamics',
     blurb: 'The Isuza Dynamics compound, all seventeen subterranean stories of it, is the home of the twisted, chaotic, mechanical hive of the C.O.R.E. central AI. Expanding through a web of tunnels and excavated ruins, the robotic threat appears seemingly at random throughout its widened territory. Groups of tireless mechanoid resource gatherers seek, disassemble, and repurpose anything they can get their manipulators on, whether it is the unearthed frame of an old factory, or the essential bio-matter of living things to use as fuel in their entropic cell batteries!',
     modelPhoto0: 'http://placehold.it/100x100/333333',
     modelPhoto1: 'http://placehold.it/100x100/aeaeae',
     modelPhoto2: 'http://placehold.it/100x100/444444',
-},
-{
+},{
     name: 'sanguinePlateau',
     title: 'Sanguine Plateau',
     blurb: 'It was here that the Dragyri forces of Luck’kit’kaii historically battled against Saint Mark and his followers, creating the longest standing vendetta between the two races. It is held as a sacred reminder of the “cowardice and treachery” of Those-Without-Honor, and is visited often by Dragyri during meditative spirit-journeys when they are seeking answers from the past.',
@@ -222,7 +219,7 @@ $(document).ready(function() {
     zoomOut.addEventListener("click", function() {
         updateZoom(-zoomFactor);
     });
-    
+
     zoomIn.addEventListener("click", function() {
         updateZoom(zoomFactor);
     });
