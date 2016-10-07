@@ -65,6 +65,7 @@ nav h1{
 .info-panel {
     display: inline-block;
     position: absolute;;
+    text-align: center;
     width: 30%;
     height: 95.5%;
     right: 0;
@@ -72,7 +73,6 @@ nav h1{
     color: white;
     /*border: 10px solid blue;*/
     padding: 50px;
-    text-align: center;
     box-shadow: -5px 0px 5px rgba(0,0,0,.25);
     transition: right .5s top 1s;
     overflow:scroll;
@@ -84,7 +84,7 @@ nav h1{
 }
 #location-blurb{
     font-family: 'Poppins',sans-serif;
-    text-align: left;
+    text-align: center;
     letter-spacing: .1em;
     font-weight: 300;
 }
@@ -100,7 +100,7 @@ nav h1{
     padding:3px;
     margin: 3px auto;
     height:100px;
-    background: url('http://placehold.it/100x100/333333') no-repeat;
+    background: url('') no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -109,10 +109,11 @@ nav h1{
     width:100px;
     height:100px;
     margin: 0px auto;
-    background: url('http://placehold.it/100x100/ffffff');
+    background: url('') no-repeat;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    overflow:visible;
 }
 #down-arrow{
     display:none;
@@ -201,6 +202,8 @@ nav h1{
         display: none;
     }
     .info-panel{
+        font-size:1.1em;
+        text-align: center;
         width:100%;
         height:auto;
         padding:10px 25px;
