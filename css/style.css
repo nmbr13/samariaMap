@@ -111,7 +111,8 @@ nav h1{
     margin: 0px auto;
     background: url('http://placehold.it/100x100/ffffff');
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 #down-arrow{
     display:none;
