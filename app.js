@@ -79,7 +79,7 @@ var dots = [{
     modelPhoto1: 'http://placehold.it/100x100/aeaeae',
     modelPhoto2: 'http://placehold.it/100x100/444444',
 }, {
-    name: 'k3Expansion',
+    name: 'k3Expansions',
     faction: 'images/k3-logo.png',
     title: 'Kukulkani Expansion',
     blurb: 'After the Kukulkani starship burned through the atmosphere and landed in the southeast foothills, the life-reaping alien invaders immediately began to set up towering ziggurats and pylons of advanced technology all around. Within just a few weeks of raiding local settlements to feed bio-energy into the mechanisms, the terraforming had begun. The peaty hills have been transformed into a wet, hot, jungle where the Children of Kukulkan plan their conquest and build their Samarian empire. Their teleporting “void roads” allow them to appear anywhere within their growing terraforming project, turning the whole area into a potential ambush around every corner.',
@@ -209,8 +209,9 @@ function toggleMenuLeft() {
 //reset the menu on resize
 function resetMenu() {
     if (window.innerWidth <= 800) {
+        console.log("Itty Bitty Living Space")
         openMenu();
-        mapCenter();
+        // mapCenter();
     }
 }
 
