@@ -209,7 +209,7 @@ function toggleMenuLeft() {
 //reset the menu on resize
 function resetMenu() {
     if (window.innerWidth <= 800) {
-        console.log("Itty Bitty Living Space")
+        console.log("Itty Bitty Living Space");
         openMenu();
         // mapCenter();
     }

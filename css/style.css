@@ -183,7 +183,7 @@ nav h1{
 /*----------------------------------*/
 /*  Media Rules for Mobile Screens  */
 /*----------------------------------*/
-@media screen and (max-width:800px) {
+@media screen and (max-width:980px) {
     .zoom-menu{
         display: flex;
         height: 50px;
