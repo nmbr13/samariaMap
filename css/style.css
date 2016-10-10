@@ -188,6 +188,9 @@ nav h1{
 /*  Media Rules for Mobile Screens  */
 /*----------------------------------*/
 @media screen and (max-width:980px) {
+    .map-canvas{
+      width: 100%;
+    }
     .zoom-menu{
         display: flex;
         height: 50px;
