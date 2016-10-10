@@ -179,6 +179,7 @@ function updateZoom(factor) {
 //Toggle the Menu
 function openMenu() {
     console.log('Open the Menu!');
+    $('.map-canvas').width('75%');
     $('.info-panel').removeClass('menu-closed');
     $('.zoom-menu').removeClass('zoom-closed');
     $('.info-panel').addClass('menu-open');
@@ -190,6 +191,7 @@ function openMenu() {
 
 function closeMenu() {
     console.log('Close the Menu!');
+    $('.map-canvas').width('100%');
     $('.info-panel').removeClass('menu-open');
     $('.zoom-menu').removeClass('zoom-open');
     $('.info-panel').addClass('menu-closed');
