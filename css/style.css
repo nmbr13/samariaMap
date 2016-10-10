@@ -59,6 +59,16 @@ nav h1{
     font-size:16px;
     margin: 0px auto;
 }
+.logo-link{
+  position: fixed;
+  width:250px;
+  z-index:100;
+  top: 0px;
+  left:0px;
+}
+.logo-link>img{
+  width:inherit;
+}
 
 
 /*----------------*/
@@ -69,7 +79,7 @@ nav h1{
     position: absolute;;
     text-align: center;
     width: 30%;
-    height: 94%;
+    height: 100%;
     right: 0;
     background-color: #4c0505;
     color: white;
@@ -82,13 +92,16 @@ nav h1{
 }
 .info-panel p{}
 #location-title{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 3.5em;
+    margin-top:10px;
 }
 #location-blurb{
-    font-family: 'Poppins',sans-serif;
-    text-align: center;
-    font-weight: 300;
+  font-family: 'Raleway',sans-serif;
+  font-size: 1.2em;
+  text-align: left;
+  font-weight: 300;
+  padding: 0px 49px;
 }
 /* Model Photos */
 #modelContainer{
@@ -142,9 +155,9 @@ nav h1{
 .map-canvas {
     display: inline-block;
     position: absolute;
-    background-color: #444;
+    background-color: #222;
     /*border: 10px solid red;*/
-    height: 94vh;
+    height: 100vh;
     width: 75%;
     overflow: hidden;
     z-index: 0;
