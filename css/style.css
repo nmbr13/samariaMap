@@ -5,6 +5,8 @@
 }
 body {
     background-color: black;
+    width:10vh;
+    overflow:hidden;
 }
 
 /*----------------*/
@@ -15,7 +17,7 @@ body {
     z-index: 100;
     top: 75px;
     right:30%;
-    transition: right 1s
+    transition: right .5s
 }
 .menu-collapse{}
 .zoom-nav{
