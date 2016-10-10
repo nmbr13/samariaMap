@@ -37,30 +37,6 @@ body {
     color:white;
 }
 
-/* Bootstrap Reset */
-nav h1{
-    line-height: 37px;
-}
-.nav{
-    padding: 5px 0px;
-    text-align: center;
-}
-.navbar-brand{
-    padding: 10px 15px;
-}
-.nav-pills>li>a{
-    color:#bbb;
-}
-.nav>li>a:hover{
-    background-color: #999;
-    color:#eee;
-
-}
-#social-links{
-    width: 220px;
-    font-size:16px;
-    margin: 0px auto;
-}
 .logo-link{
   position: fixed;
   width:250px;
@@ -105,6 +81,17 @@ nav h1{
   font-weight: 300;
   padding: 0px 49px;
 }
+#location-title{}
+#location-faction{
+    width:100px;
+    height:100px;
+    margin: 0px auto;
+    background: url('') no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow:visible;
+}
 /* Model Photos */
 #modelContainer{
     display:flex;
@@ -120,17 +107,6 @@ nav h1{
     background: url('') no-repeat;
     background-position: center;
     background-size: cover;
-}
-#location-title{}
-#location-faction{
-    width:100px;
-    height:100px;
-    margin: 0px auto;
-    background: url('') no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    overflow:visible;
 }
 #down-arrow{
     display:none;
