@@ -75,13 +75,15 @@ body {
     margin-top:10px;
 }
 #location-blurb{
-  font-family: 'Raleway',sans-serif;
-  font-size: 1.2em;
+  font-family: 'Open Sans Condensed',sans-serif;
   text-align: left;
   font-weight: 300;
-  padding: 0px 49px;
+  margin:10px auto;
+  padding: 0px 20px;
 }
-#location-title{}
+#location-title{
+  font-size: 2em;
+}
 #location-faction{
     width:100px;
     height:100px;
@@ -178,6 +180,9 @@ body {
 /*  Media Rules for Mobile Screens  */
 /*----------------------------------*/
 @media screen and (max-width:980px) {
+    body{
+      overflow:scroll;
+    }
     .map-canvas{
       width: 100%;
     }
@@ -207,6 +212,9 @@ body {
         right:0px;
         left:0px;
         margin: 0px auto;
+    }
+    #location-blurb{
+      padding: 0px 40px;
     }
     .nav{
         text-align: center;

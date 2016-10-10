@@ -179,13 +179,16 @@ function updateZoom(factor) {
 //Toggle the Menu
 function openMenu() {
     console.log('Open the Menu!');
-    $('.map-canvas').width('75%');
+
     $('.info-panel').removeClass('menu-closed');
     $('.zoom-menu').removeClass('zoom-closed');
     $('.info-panel').addClass('menu-open');
     $('.zoom-menu').addClass('zoom-open');
     $('.menu-collapse').find('i').removeClass('fa-bars');
     $('.menu-collapse').find('i').addClass('fa-arrow-right');
+    if (window.innerWidth >=980) {
+      $('.map-canvas').width('75%');
+    }
     isDown = false;
 }
 
