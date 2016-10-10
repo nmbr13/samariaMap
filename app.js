@@ -1,7 +1,5 @@
 var locationDots = [];
 var mapContainer = document.getElementById('draggable');
-var zoomOut = document.getElementById('zoom-out');
-var zoomIn = document.getElementById('zoom-in');
 var currentZoom = 1;
 var zoomFactor = .25;
 var isDown = false;
@@ -176,7 +174,7 @@ function updateZoom(factor) {
     }
     mapContainer.style.transform = 'scale(' + currentZoom + ')';
 }
-//Toggle the Menu
+//Open the Info Panel and the Zoom Menu
 function openMenu() {
     console.log('Open the Menu!');
     $('.info-panel').removeClass('menu-closed');
@@ -187,7 +185,7 @@ function openMenu() {
     $('.menu-collapse').find('i').addClass('fa-arrow-right');
     isDown = false;
 }
-
+//Open the Info Panel and the Zoom Menu
 function closeMenu() {
     console.log('Close the Menu!');
     $('.info-panel').removeClass('menu-open');
@@ -198,7 +196,8 @@ function closeMenu() {
     $('.menu-collapse').find('i').addClass('fa-bars');
     isDown = true;
 }
-
+// Use openMenu and closeMenu to toggle the menu open and closed
+//This only works while the window is over 980px wide. Any smaller and the collapse button is removed and the menu is fixed to the bottom
 function toggleMenuLeft() {
     if (!isDown) {
         closeMenu();
@@ -214,13 +213,13 @@ function resetMenu() {
         // mapCenter();
     }
 }
-
+//reset the arrow flash
 function classReset() {
     document.getElementById('down-arrow').classList.remove('animated', 'flash');
 }
 
 $(document).ready(function() {
-
+    //Once the docment is ready you can begin to handle events on the DOM
     //Handle the clicking of the dots on the Map
     $('.location-dot').click(function() {
         var name = this.getAttribute("name");
@@ -236,16 +235,12 @@ $(document).ready(function() {
     //Makes the map draggable.
     $('#draggable').draggable();
 
-
+    /*-----MENU NAVIGATION AND CONTROLS-----*/
     //Zoom Navigation code
-    zoomOut.addEventListener("click", function() {
-        updateZoom(-zoomFactor);
-    });
-    zoomIn.addEventListener("click", function() {
-        updateZoom(zoomFactor);
-    });
+    document.getElementById('zoom-out').addEventListener("click", updateZoom(-zoomFactor));
+    document.getElementById('zoom-in').addEventListener("click", updateZoom(zoomFactor));
 
-    // Menu Options
+    //when the Menu Collapse button is clicked it toggles the menu from closed to open and vis versa
     document.getElementById('menu-collapse').addEventListener('click', toggleMenuLeft);
 
     // catch resize and reset the menu
@@ -253,5 +248,7 @@ $(document).ready(function() {
     document.getElementById('down-arrow').addEventListener('click', function() {
         this.addClass('animated bounce')
     });
+
+    /*-----END MENU NAV-----*/
 
 });
