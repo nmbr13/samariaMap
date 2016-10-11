@@ -6,8 +6,7 @@ var currentZoom = 1;
 var zoomFactor = .25;
 var isDown = false;
 var windowWidth = window.innerWidth;
-//faction logos
-
+var modal = document.getElementById()
 //The dots array holds all of the objects for the location data on the map.
 var dots = [{
     name: 'error',
