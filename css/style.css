@@ -5,8 +5,6 @@
 }
 body {
     background-color: black;
-    width:10vh;
-    overflow:hidden;
 }
 
 /*----------------*/
@@ -17,7 +15,7 @@ body {
     z-index: 100;
     top: 75px;
     right:30%;
-    transition: right .5s
+    transition: right 1s
 }
 .menu-collapse{}
 .zoom-nav{
@@ -37,18 +35,30 @@ body {
     color:white;
 }
 
-.logo-link{
-  position: fixed;
-  width:250px;
-  z-index:100;
-  top: 0px;
-  left:0px;
+/* Bootstrao Reset */
+nav h1{
+    line-height: 37px;
 }
-.logo-link>img{
-  width:inherit;
+.nav{
+    padding: 5px 0px;
+    text-align: center;
 }
+.navbar-brand{
+    padding: 10px 15px;
+}
+.nav-pills>li>a{
+    color:#bbb;
+}
+.nav>li>a:hover{
+    background-color: #999;
+    color:#eee;
 
-
+}
+#social-links{
+    width: 220px;
+    font-size:16px;
+    margin: 0px auto;
+}
 /*----------------*/
 /* Info Panel CSS */
 /*----------------*/
@@ -57,39 +67,26 @@ body {
     position: absolute;;
     text-align: center;
     width: 30%;
-    height: 100%;
+    height: 95.5%;
     right: 0;
     background-color: #4c0505;
     color: white;
     /*border: 10px solid blue;*/
     padding: 50px;
     box-shadow: -5px 0px 5px rgba(0,0,0,.25);
-    transition: right .5s, top 1s;
-    /*Having 2 Scroll bars looks visually strange*/
-    /*overflow:scroll;*/
+    transition: right .5s top 1s;
+    overflow:scroll;
 }
 .info-panel p{}
 #location-title{
-    font-family: 'Cinzel', serif;
-    font-size: 2em;
-    margin-top:10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5em;
 }
 #location-blurb{
-  font-family: 'Titillium Web', sans-serif;
-  text-align: left;
-  font-weight: 300;
-  margin: 20px auto 10px auto;
-}
-
-#location-faction{
-    width:100px;
-    height:100px;
-    margin: 0px auto;
-    background: url('') no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    overflow:visible;
+    font-family: 'Poppins',sans-serif;
+    text-align: center;
+    letter-spacing: .1em;
+    font-weight: 300;
 }
 /* Model Photos */
 #modelContainer{
@@ -97,7 +94,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin:30px 0px;
 }
 .modelPhoto{
     width:100px;
@@ -107,6 +103,17 @@ body {
     background: url('') no-repeat;
     background-position: center;
     background-size: cover;
+}
+#location-title{}
+#location-faction{
+    width:100px;
+    height:100px;
+    margin: 0px auto;
+    background: url('') no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow:visible;
 }
 #down-arrow{
     display:none;
@@ -133,18 +140,18 @@ body {
 .map-canvas {
     display: inline-block;
     position: absolute;
-    background-color: #222;
+    background-color: #444;
     /*border: 10px solid red;*/
-    height: 100vh;
-    width: 75%;
-    overflow: hidden;
+    height: 95.5vh;
+    width: 100%;
+    overflow: scroll;
     z-index: 0;
-    transition: width .5s;
+    transition: width 1s;
 
 }
 .map-container {
     transform-origin: 50% 50%;
-    transition: transform .75s;
+    transition: transform 1s;
 }
 #map-image{
     box-shadow: 0px 0px 15px rgba(0,0,0,.5);
@@ -178,12 +185,6 @@ body {
 /*  Media Rules for Mobile Screens  */
 /*----------------------------------*/
 @media screen and (max-width:980px) {
-    body{
-      overflow:scroll;
-    }
-    .map-canvas{
-      width: 100%;
-    }
     .zoom-menu{
         display: flex;
         height: 50px;
@@ -210,9 +211,6 @@ body {
         right:0px;
         left:0px;
         margin: 0px auto;
-    }
-    #location-blurb{
-      padding: 0px 40px;
     }
     .nav{
         text-align: center;

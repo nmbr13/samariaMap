@@ -5,9 +5,11 @@
     <meta charset="utf-8">
 
     <!-- Font Load -->
-  <link href="https://fonts.googleapis.com/css?family=Cinzel|Titillium+Web:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet">
+
     <!-- Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- Font Awesome Icons -->
     <script src="https://use.fontawesome.com/59eb0099c5.js"></script>
@@ -25,14 +27,23 @@
 </head>
 
 <body>
-  <!--Logo Link-->
-  <a class="logo-link" href="https:///www.dark-age.com" target="_blank"><img src="images/logo-link.png" alt=""></a>
+    <!-- Navbar -->
+    <nav class="nav navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" style="color:#666"><h1 class="navbar-nav navbar-left">Explore Samaria</h1></a>
+            </div>
+            <ul id="social-links" class='nav nav-pills navbar-right'>
+                <li><a href="https://www.facebook.com/darkageminis" target="_blank"><i class='fa fa-facebook' style="font-size:20px;"></i> Facebook</a></li>
+                <li><a href=""><i class='fa fa-twitter' style="font-size:20px;"></i> Twitter</a></li>
+            </ul>
+        </div>
+    </nav>
 
 
     <!------------------->
     <!-- MAP CONTAINER -->
     <!------------------->
-
     <!-- Contains the zoom controls -->
     <div class="zoom-menu" id='zoom-menu'>
         <div class="zoom-nav menu-collapse" id='menu-collapse'><i class='fa fa-arrow-right'></i></div>
@@ -42,12 +53,8 @@
 
     <!-- Contains the parent div for the left part of the page -->
     <div class="map-canvas">
-        <!-- All of the actual rendered contents for the map are contained in the map-container -->
+        <!-- All of the actual rendered contents for the map -->
         <!-- The draggable id contains all of the elements that should be moved together -->
-
-        <!-- The style tag of the map-container determines most of the position and functionality of the map.
-        1. Should the map be focused on the Center of the map rather than just were it loads into the corner
-        2. Should the map start scaled out more? -->
         <div class="map-container ui-widget-content" id="draggable" style="">
             <img id="map" src="images/Dark_Age_Map_Layers.jpg" alt="" style="width:2000px;height:auto;">
             <div class="location-dot" style="top: 694px;left: 1290px;" name="newAsh"></div>
@@ -74,23 +81,17 @@
         <div id='down-arrow' class="fa fa-sort-down"></div>
 
         <div id="location-faction"></div>
-        <!-- What could we do with the title typography? -->
-        <div id="location-title">Welcome to Samaria</div>
+        <div id="location-title"><h1>Welcome to Samaria</h1></div>
 
         <hr>
-        <p id='location-blurb'>Click the red circles on the map of Samaria to explore the map. You can also drag the map and zoom in and out using the '-' and '+' buttons</p>
-        <br>
-        <hr>
-        <div id='modelContainer'>
-          <a href="#"><div class='modelPhoto' alt=""></div></a>
-          <a href="#"><div class='modelPhoto' alt=""></div></a>
-          <a href="#"><div class='modelPhoto' alt=""></div></a>
+        <p id='location-blurb'>Click the red circles on the map of Samaria to explore the map.</p>
+        <div id='modelContainer'">
+            <div class='modelPhoto' alt=""></div>
+            <div class='modelPhoto' alt=""></div>
+            <div class='modelPhoto' alt=""></div>
         </div>
         <hr>
-
     </div>
-
     <script src='app.js'></script>
 </body>
-
 </html>
