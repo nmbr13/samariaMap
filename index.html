@@ -5,8 +5,8 @@
     <meta charset="utf-8">
 
     <!-- Font Load -->
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Titillium+Web" rel="stylesheet">
+
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
 
     <!-- JQUERY Loading -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
 
     <!-- Animate CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -24,23 +24,18 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="dist/css/lightbox.min.css">
+
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="nav navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="#" style="color:#666"><h1 class="navbar-nav navbar-left">Explore Samaria</h1></a>
-            </div>
-            <ul id="social-links" class='nav nav-pills navbar-right'>
-                <li><a href="https://www.facebook.com/darkageminis" target="_blank"><i class='fa fa-facebook' style="font-size:20px;"></i> Facebook</a></li>
-                <li><a href=""><i class='fa fa-twitter' style="font-size:20px;"></i> Twitter</a></li>
-            </ul>
-        </div>
-    </nav>
+    <a href="http://www.dark-age.com" class="logo-link" target="_blank">
+        <img src="images/logo-link.png" alt="Dark Age link">
+    </a>
 
-
+    <img id='popUp' class="popUp" src="http://www.placehold.it/1000.500" alt="">
+    <div id="background" class="background"></div>
     <!------------------->
     <!-- MAP CONTAINER -->
     <!------------------->
@@ -81,17 +76,19 @@
         <div id='down-arrow' class="fa fa-sort-down"></div>
 
         <div id="location-faction"></div>
-        <div id="location-title"><h1>Welcome to Samaria</h1></div>
+        <div id="location-title">Welcome to Samaria</div>
 
         <hr>
         <p id='location-blurb'>Click the red circles on the map of Samaria to explore the map.</p>
-        <div id='modelContainer'">
-            <div class='modelPhoto' alt=""></div>
+        <div id='modelContainer'>
             <div class='modelPhoto' alt=""></div>
             <div class='modelPhoto' alt=""></div>
         </div>
         <hr>
     </div>
+
+    <script src="dist/js/lightbox-plus-jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src='app.js'></script>
 </body>
 </html>
