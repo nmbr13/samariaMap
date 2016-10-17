@@ -5,6 +5,7 @@
 }
 body {
     background-color: black;
+    overflow:hidden;
 }
 
 /*----------------*/
@@ -175,6 +176,10 @@ body {
 /*  Media Rules for Mobile Screens  */
 /*----------------------------------*/
 @media screen and (max-width:980px) {
+    body{
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
     .logo-link{
         width:250px;
     }
