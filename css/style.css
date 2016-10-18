@@ -26,7 +26,7 @@ body {
     z-index: 100;
     top: 75px;
     right:30%;
-    transition: right 1s
+    transition: right .5s
 }
 .menu-collapse{}
 .zoom-nav{
@@ -71,6 +71,16 @@ body {
     overflow:scroll;
 }
 .info-panel p{}
+#location-faction{
+    width:100px;
+    height:100px;
+    margin: 0px auto;
+    background: url('') no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow:visible;
+}
 #location-title{
     font-family: 'Cinzel', serif;
     font-size: 3.5em;
@@ -80,6 +90,19 @@ body {
     text-align: left;
     letter-spacing: .1em;
     font-weight: 300;
+}
+.store-button{
+    width: 100%;
+    font-size: 1.25em;
+    background-color: #731212;
+    line-height: 48px;
+    height: 50px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.store-button:hover{
+    background: #734342;
 }
 /* Model Photos */
 #modelContainer{
@@ -98,16 +121,7 @@ body {
     background-size: cover;
 }
 #location-title{}
-#location-faction{
-    width:100px;
-    height:100px;
-    margin: 0px auto;
-    background: url('') no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    overflow:visible;
-}
+
 #down-arrow{
     display:none;
     color:white;
