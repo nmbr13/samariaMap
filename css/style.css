@@ -68,8 +68,7 @@ body {
     padding: 50px;
     box-shadow: -5px 0px 5px rgba(0,0,0,.25);
     transition: right .5s top 1s;
-    overflow:scroll;
-}
+  }
 .info-panel p{}
 #location-faction{
     width:100px;
@@ -151,7 +150,7 @@ body {
     /*border: 10px solid red;*/
     height: 100%;
     width: 100%;
-    overflow: scroll;
+    overflow: hidden;
     z-index: 0;
     transition: width 1s;
 
