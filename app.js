@@ -119,7 +119,7 @@ var dots = [
 {
     name: 'citadel',
     faction: 'images/fire-caste-logo.png',
-    title: 'Volcanic Citadel ',
+    title: 'Volcanic Citadel',
     blurb: 'The sprawling home of the Fire Caste and the secret hideaway of the last living Alteghrans, the Volcanic Citadel is a network of basalt towers and magma-carved caverns where Rath’Zhi rules his people. Massive storage warehouses and engineering labs are scattered throughout to keep the Fire Caste well-armed with advanced weaponry. After the destruction of one of the Arbiter’s personal arms caches by Saint Luke, platoons of soldiers patrol for miles around to keep the Citadel safe from further trespass. Lava flows, ash, and Fire Caste Dragyri are all you will find in these black mountains.',
     modelThumb0: 'images/models/inferno-Thumb.png',
     modelThumb1: 'images/models/embers-Thumb.png',
